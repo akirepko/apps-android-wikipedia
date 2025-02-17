@@ -1,4 +1,4 @@
-package org.wikipedia.homeworks.homework05
+package org.wikipedia.homeworks.homework06
 
 import org.hamcrest.Description
 import org.hamcrest.MatcherAssert.assertThat
@@ -62,7 +62,7 @@ class EvenQuantyMatcher(
     }
 }
 
-fun hasEvenQuanty() =EvenQuantyMatcher()
+fun hasEvenQuanty() = EvenQuantyMatcher()
 class ColorMatcher(
     private val expectedColor: Color
 ) : TypeSafeMatcher<Shape>() {
