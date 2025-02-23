@@ -27,18 +27,18 @@ class LongSidesInRangeMatcher(
 fun hasSideLengthInRange(min: Float, max: Float) = LongSidesInRangeMatcher(min, max)
 
 class CornerMatcher(
-    private val quantySide: Int
+    private val quantyСorner: Int
 ) : TypeSafeMatcher<Shape>() {
 
 
     override fun describeTo(description: Description) {
-        description.appendText("количество углов $quantySide")
+        description.appendText("количество углов $quantyСorner")
     }
 
     override fun matchesSafely(item: Shape): Boolean {
         return when {
             item.quantySide >= 3 -> item.quantySide == item.quantySide
-            item.quantySide == 1 || item.quantySide == 2 -> true
+            item.quantySide == 1 || item.quantySide == 2 -> quantyСorner==0
             else -> false
         }
     }
@@ -75,6 +75,8 @@ class ColorMatcher(
     override fun matchesSafely(item: Shape): Boolean {
         return item.color == expectedColor
     }
+
+
 }
 fun hasColor(expectedColor: Color) = ColorMatcher(expectedColor)
 class NegativeSideLengthMatcher : TypeSafeMatcher<Shape>() {
@@ -84,6 +86,7 @@ class NegativeSideLengthMatcher : TypeSafeMatcher<Shape>() {
     override fun matchesSafely(item: Shape): Boolean {
         return item.longSides >= 0
     }
+
 }
 fun hasValidSideLength() = NegativeSideLengthMatcher()
 

@@ -6,6 +6,12 @@
     tools:layout_width="match_parent"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="primaryTextView" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
