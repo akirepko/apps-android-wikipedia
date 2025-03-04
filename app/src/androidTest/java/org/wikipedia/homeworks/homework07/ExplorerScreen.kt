@@ -25,6 +25,7 @@ object ExplorerScreen : KScreen<ExplorerScreen>() {
             itemType(::AnnounceCardViewItem)
             itemType(::DayHeaderViewItem)
             itemType(::TopReaderCardViewIteam)
+            itemType(::NewsCardViewItem)
 
         }
     )

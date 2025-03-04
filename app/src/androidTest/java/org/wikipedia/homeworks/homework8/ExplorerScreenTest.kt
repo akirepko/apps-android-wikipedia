@@ -5,6 +5,7 @@ import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.homeworks.homework03.OnboardingScreen
+import org.wikipedia.homeworks.homework07.DayHeaderViewItem
 import org.wikipedia.homeworks.homework07.ExplorerScreen
 import org.wikipedia.homeworks.homework07.ListCardItemView
 import org.wikipedia.homeworks.homework07.SearchCardViewItem
@@ -42,6 +43,13 @@ class ExploreScreenTests : TestCase() {
                     items.childAt<ListCardItemView>(1) {
                         image.isDisplayed()
                     }
+                }
+            }
+            step ("featured arcticle"){
+                ExplorerScreen.items.childWith<TopReaderCardViewIteam> {
+                    withDescendant { withText("Top read") } }.perform {
+                        titleTopReader.isDisplayed()
+                    moreActione.isDisplayed()
                 }
             }
         }

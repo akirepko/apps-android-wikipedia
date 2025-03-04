@@ -11,7 +11,7 @@ import org.wikipedia.R
 class TopReaderCardViewIteam(matcher: Matcher<View>) :
     KRecyclerItem<TopReaderCardViewIteam>(matcher) {
     val  titleTopReader = KTextView (matcher){withId(R.id.view_card_header_title)}
-    val  moreActionr = KTextView (matcher){withId(R.id.footerActionButton)}
+    val  moreActione = KTextView (matcher){withId(R.id.footerActionButton)}
 
 
     val imageHeader =  KImageView (matcher){withId(R.id.view_card_header_title)}
