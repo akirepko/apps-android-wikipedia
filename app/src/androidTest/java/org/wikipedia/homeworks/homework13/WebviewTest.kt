@@ -84,10 +84,29 @@ class WebviewTest:TestCase() {
                 click() }
             ArticleViewScreen{
                 webview {
-                    withElement(Locator.ID,"References"){
-                        scroll()
+                    withElement(Locator.XPATH,"//*[@id=\"cite_ref-5\"]/a/span/span[1] "){
+                        click()
 
                     }
+                }
+
+            }
+        }
+        ScrollViewScreen.description.hasText("5")
+        device.uiDevice.pressBack()
+        ArticleViewScreen{
+            webview {
+                withElement(Locator.CSS_SELECTOR,"> section:nth-child(3) > p:nth-child(5) > a:nth-child(8)"){
+                    click()
+
+                }
+            }
+        }
+        ArticleViewScreen{
+            webview {
+                withElement(Locator.ID,"Bibliography"){
+                    scroll()
+
                 }
             }
         }
