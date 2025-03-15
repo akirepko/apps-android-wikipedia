@@ -1,7 +1,6 @@
-package org.wikipedia.homeworks.homeworks11
+package org.wikipedia.homeworks.homework11
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.uiautomator.UiSelector
 import com.kaspersky.kaspresso.device.exploit.Exploit
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
