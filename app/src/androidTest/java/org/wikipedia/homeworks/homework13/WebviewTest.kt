@@ -2,6 +2,8 @@ package org.wikipedia.homeworks.homework13
 
 import androidx.test.espresso.web.webdriver.Locator
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.kaspersky.components.alluresupport.withForcedAllureSupport
+import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
@@ -10,7 +12,7 @@ import org.wikipedia.homeworks.homework07.ExplorerScreen
 import org.wikipedia.homeworks.homework07.SearchCardViewItem
 import org.wikipedia.main.MainActivity
 
-class WebviewTest:TestCase() {
+class WebviewTest:TestCase(Kaspresso.Builder.withForcedAllureSupport ()) {
 
     @get:Rule
     val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
@@ -84,7 +86,7 @@ class WebviewTest:TestCase() {
                 click() }
             ArticleViewScreen{
                 webview {
-                    withElement(Locator.XPATH,"//*[@id=\"cite_ref-5\"]/a/span/span[1] "){
+                    withElement(Locator.XPATH,"//sup[contains(@class,'refernces']"){
                         click()
 
                     }

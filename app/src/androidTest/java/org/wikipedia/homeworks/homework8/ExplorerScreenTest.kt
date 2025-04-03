@@ -1,7 +1,10 @@
 package org.wikipedia.homeworks.hw08
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import com.kaspersky.components.alluresupport.withForcedAllureSupport
+import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
+import org.junit.After
 import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.homeworks.homework03.OnboardingScreen
@@ -13,7 +16,7 @@ import org.wikipedia.homeworks.homework07.TopReaderCardViewIteam
 import org.wikipedia.main.MainActivity
 import org.wikipedia.page.PageActivity
 
-class ExploreScreenTests : TestCase() {
+class ExploreScreenTests : TestCase(Kaspresso.Builder.withForcedAllureSupport ()) {
 
     @get:Rule
     val activityScenarioRule : ActivityScenarioRule<MainActivity> =

@@ -21,6 +21,7 @@ object ExplorerScreen : KScreen<ExplorerScreen>() {
            withId(R.id.feed_view)
         },
         itemTypeBuilder = {
+            itemType(::FeaturedArticleCardViewItem)
             itemType(::SearchCardViewItem)
             itemType(::AnnounceCardViewItem)
             itemType(::DayHeaderViewItem)
