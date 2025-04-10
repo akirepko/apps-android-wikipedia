@@ -4,6 +4,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
+import org.wikipedia.homeworks.homework19.Steps
 import org.wikipedia.homeworks.homework8.screen.NewOnboardingScreen
 import org.wikipedia.homeworks.homework8.screen.OnboardingPageItem
 import org.wikipedia.main.MainActivity
@@ -54,13 +55,19 @@ class OnboardingScreenTest : TestCase() {
     @Test
     fun thirdTest() {
         run {
+            val steps = Steps(this)
+            steps{
+                click(NewOnboardingScreen.forwardButton,"")
+            }
+
             step(" переход на главную") {
                 NewOnboardingScreen.forwardButton.click()
+
                 NewOnboardingScreen.forwardButton.click()
                 NewOnboardingScreen.forwardButton.click()
                 NewOnboardingScreen.slider.childAt<OnboardingPageItem>(2) {
                     imageView.isDisplayed()
-                    primaryInfoText.isDisplayed()
+                    primaryInfoText.hasAnyText()
                     secondaryInfoText.isDisplayed()
                     addLanguageBtn.isNotDisplayed()
                 }

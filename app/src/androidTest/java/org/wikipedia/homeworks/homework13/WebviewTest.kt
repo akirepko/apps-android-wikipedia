@@ -10,6 +10,8 @@ import org.junit.Test
 import org.wikipedia.homeworks.homework03.OnboardingScreen
 import org.wikipedia.homeworks.homework07.ExplorerScreen
 import org.wikipedia.homeworks.homework07.SearchCardViewItem
+import org.wikipedia.homeworks.homework19.Steps
+import org.wikipedia.homeworks.homework8.screen.NewOnboardingScreen
 import org.wikipedia.main.MainActivity
 
 class WebviewTest:TestCase(Kaspresso.Builder.withForcedAllureSupport ()) {
@@ -19,20 +21,27 @@ class WebviewTest:TestCase(Kaspresso.Builder.withForcedAllureSupport ()) {
 
     @Test
     fun webViewTest(){
+
         run{
-            OnboardingScreen.skipButton.click()
-            ExplorerScreen.items.childWith<SearchCardViewItem> {
-                withDescendant { withText("Featured article") }
-            }.perform {
-                Thread.sleep(1222)
-                click() }
-            ArticleViewScreen{
-                webview {
-                    withElement(Locator.CSS_SELECTOR,"mw-page-title-main"){
-                        hasText("Five pounds (gold coin)")
+            steps{
+                click(OnboardingScreen.skipButton, "Кнопка Skip")
+                ExplorerScreen.items.childWith<SearchCardViewItem> {
+                    withDescendant { withText("Featured article") }
+                }.perform {
+                    steps.isVisible(this, "some")
+                    sleep(1222)
+                    click() }
+                ArticleViewScreen{
+                    webview {
+                        withElement(Locator.CSS_SELECTOR,"mw-page-title-main"){
+                            hasText("Five pounds (gold coin)")
+                        }
                     }
                 }
             }
+
+
+
         }
     }
 
