@@ -7,6 +7,8 @@ import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.homeworks.homework20.name
+import org.wikipedia.homeworks.homework20.withParent
 
 class ListCardItemView(
     matcher: Matcher<View>
@@ -28,7 +30,7 @@ class ListCardItemView(
         withId(R.id.view_list_card_item_pageviews)
     }
 
-    val image = KImageView(matcher) {
+    val image by  lazy { KImageView(matcher) {
         withId(R.id.view_list_card_item_image)
-    }
+    }.name(withParent("Картинка")) }
 }
