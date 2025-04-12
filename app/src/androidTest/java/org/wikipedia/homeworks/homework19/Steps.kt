@@ -36,27 +36,27 @@ class Steps(val testContext: TestContext<*>) {
 
     }
 
-    fun disableNetwork(device: Device) {
+    fun disableNetwork() {
         execute("Выключили интеренет") {
-            device.network.disable()
+            testContext.device.network.disable()
         }
     }
 
-    fun setOrientationLeft(device: Device) {
+    fun setOrientationLeft() {
         execute("Повернули влево экран") {
-            device.uiDevice.setOrientationLeft()
+            testContext.device.uiDevice.setOrientationLeft()
         }
     }
 
-    fun setOrientationRight(device: Device) {
+    fun setOrientationRight() {
         execute("Повернули вправо экран") {
-            device.uiDevice.setOrientationRight()
+            testContext.device.uiDevice.setOrientationRight()
         }
     }
 
-    fun setOrientationNatural(device: Device) {
+    fun setOrientationNatural() {
         execute("Повернули  экран в дефолт") {
-            device.uiDevice.setOrientationNatural()
+            testContext.device.uiDevice.setOrientationNatural()
         }
     }
 
@@ -100,9 +100,9 @@ class Steps(val testContext: TestContext<*>) {
         }
     }
 
-    fun enableNetwork(device: Device) {
+    fun enableNetwork() {
         execute("Включили интеренет") {
-            device.network.enable()
+            testContext.device.network.enable()
         }
     }
 

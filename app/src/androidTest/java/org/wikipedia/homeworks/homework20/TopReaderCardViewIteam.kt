@@ -1,0 +1,32 @@
+package org.wikipedia.homeworks.homework20
+
+import android.view.View
+import io.github.kakaocup.kakao.image.KImageView
+import io.github.kakaocup.kakao.recycler.KRecyclerItem
+import io.github.kakaocup.kakao.recycler.KRecyclerView
+import io.github.kakaocup.kakao.text.KTextView
+import org.hamcrest.Matcher
+import org.wikipedia.R
+import org.wikipedia.homeworks.homework07.ListCardItemView
+
+class TopReaderCardViewIteam(matcher: Matcher<View>) :
+    KRecyclerItem<TopReaderCardViewIteam>(matcher) {
+    val titleTopReader by lazy {
+        KTextView(matcher) { withId(R.id.view_list_card_header) }
+            .name(withParent("Заголовок"))
+        val moreActione by lazy {
+            KTextView(matcher) { withId(R.id.footerActionButton) }.name(withParent("Button more"))
+
+
+            val imageHeader = KImageView(matcher) { withId(R.id.view_card_header_title) }
+            val items = KRecyclerView(
+                parent = matcher,
+                builder = { withId(R.id.view_list_card_list) },
+                itemTypeBuilder = {
+                    itemType(::ListCardItemView)
+                }
+
+            ).name(withParent(""))
+        }
+    }
+}
