@@ -7,6 +7,8 @@ import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import org.wikipedia.R
+import org.wikipedia.homeworks.homework20.name
+import org.wikipedia.homeworks.homework20.withParent
 
 class SearchCardViewItem(matcher: Matcher<View>) :
     KRecyclerItem<SearchCardViewItem>(matcher) {
@@ -21,8 +23,7 @@ class SearchCardViewItem(matcher: Matcher<View>) :
         withText(R.string.search_hint)
     }
 
-    val voiceIcon = KImageView(matcher){
+    val voiceIcon by lazy { KImageView(matcher){
         withId(R.id.voice_search_button)
-
-    }
+    }.name(withParent("иконка лупы")) }
 }
