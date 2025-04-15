@@ -10,7 +10,7 @@ fun <T : BaseActions> T.name(nameHierarchy: NameHierarchy): T {
 }
 
 fun BaseActions.getName(): NameHierarchy {
-    return names[this] ?: throw RuntimeException("Укажи имя")
+    return names[this] ?: NameHierarchy("NO label")
 }
 
 fun BaseActions.withParent(elementName: String) = getName().withParent(elementName)

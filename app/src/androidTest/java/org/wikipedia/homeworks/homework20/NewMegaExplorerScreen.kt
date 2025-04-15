@@ -19,7 +19,7 @@ object NewMegaExplorerScreen : NamedKScreen<NewMegaExplorerScreen>() {
         KImageView { withId(R.id.main_toolbar_wordmark) }.name(withParent("Заголовок"))
     }
 
-    val items = KRecyclerView(
+    val items  by lazy  {KRecyclerView(
         builder = { withId(R.id.feed_view) },
         itemTypeBuilder = {
             itemType(::FeaturedArticleCardViewItem)
@@ -29,13 +29,13 @@ object NewMegaExplorerScreen : NamedKScreen<NewMegaExplorerScreen>() {
             itemType(::TopReaderCardViewIteam)
             itemType(::NewsCardViewItem)
         }
-    ).name(withParent("Список блоков"))
+    ).name(withParent("Список блоков"))}
 
     fun topReaderCardViewItem(index: Int, function:TopReaderCardViewIteam.()->Unit){
         items.invokeAtIndex(index,function)
     }
 
-    fun topReadItem(): TopReaderCardViewIteam {
+    fun topReaderCardViewItem(): TopReaderCardViewIteam {
         return items.childWith<TopReaderCardViewIteam> {
             withDescendant {
                 withText("Top read")

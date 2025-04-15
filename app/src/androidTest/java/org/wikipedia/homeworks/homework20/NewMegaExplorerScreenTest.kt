@@ -35,13 +35,10 @@ class NewExploreScreenTests : TestCase(Kaspresso.Builder.withForcedAllureSupport
                 }
                 swipeUp(NewMegaExplorerScreen.items)
 
-                NewMegaExplorerScreen.items.childAt<TopReaderCardViewIteam>(4){
-                    isDisplayed()
-
+                NewMegaExplorerScreen.topReaderCardViewItem(4){
+                    isDisplayed(titleTopReader)
                     items.childAt<ListCardItemView>(1) {
                         isDisplayed(image)
-
-
                     }
                 }
             }
