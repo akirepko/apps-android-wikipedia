@@ -5,6 +5,11 @@ import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
 import org.wikipedia.homeworks.homework19.Steps
+import org.wikipedia.homeworks.homework21.CustomViewAction
+import org.wikipedia.homeworks.homework21.CustomViewAssertion
+import org.wikipedia.homeworks.homework21.customCheckText
+import org.wikipedia.homeworks.homework21.customClick
+import org.wikipedia.homeworks.homework21.getText
 import org.wikipedia.homeworks.homework8.screen.NewOnboardingScreen
 import org.wikipedia.homeworks.homework8.screen.OnboardingPageItem
 import org.wikipedia.main.MainActivity
@@ -41,7 +46,10 @@ class OnboardingScreenTest : TestCase() {
     fun secondTest() {
         run {
             step("second page") {
-                NewOnboardingScreen.forwardButton.click()
+//                NewOnboardingScreen.skipButton.view.check(CustomViewAssertion("Skip"))
+                NewOnboardingScreen.skipButton.customCheckText("Skip")
+                val text =NewOnboardingScreen.skipButton.getText()
+                NewOnboardingScreen.forwardButton.customClick()
                 NewOnboardingScreen.slider.childAt<OnboardingPageItem>(1) {
                     imageView.isDisplayed()
                     primaryInfoText.isDisplayed()

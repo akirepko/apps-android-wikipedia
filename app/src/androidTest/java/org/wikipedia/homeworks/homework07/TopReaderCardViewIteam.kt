@@ -12,17 +12,23 @@ import org.wikipedia.homeworks.homework20.withParent
 
 class TopReaderCardViewIteam(matcher: Matcher<View>) :
     KRecyclerItem<TopReaderCardViewIteam>(matcher) {
-    val  titleTopReader by lazy{ KTextView (matcher){withId(R.id.view_card_header_title)}.name(withParent("Ghbrjk"))}
-    val  moreActione = KTextView (matcher){withId(R.id.footerActionButton)}
+    val titleTopReader by lazy {
+        KTextView(matcher) { withId(R.id.view_card_header_title) }.name(
+            withParent("Ghbrjk")
+        )
+    }
+    val moreActione = KTextView(matcher) { withId(R.id.footerActionButton) }
 
 
-    val imageHeader =  KImageView (matcher){withId(R.id.view_card_header_title)}
-        val items = KRecyclerView (
+    val imageHeader = KImageView(matcher) { withId(R.id.view_card_header_title) }
+    val items by lazy {
+        KRecyclerView(
             parent = matcher,
-            builder = {withId(R.id.view_list_card_list)},
+            builder = { withId(R.id.view_list_card_list) },
             itemTypeBuilder = {
                 itemType(::ListCardItemView)
             }
 
         ).name(withParent("несчо"))
+    }
 }
