@@ -10,7 +10,7 @@ import org.wikipedia.homeworks.homework07.NewsCardViewItem
 import org.wikipedia.homeworks.homework07.SearchCardViewItem
 import org.wikipedia.homeworks.homework07.TopReaderCardViewIteam
 
-object NewMegaExplorerScreen : NamedKScreen<NewMegaExplorerScreen>() {
+object ExplorerScreenNew : NamedKScreen<ExplorerScreenNew>() {
     override val screenName = "Главный экран"
     override val layoutId = null
     override val viewClass = null
