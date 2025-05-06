@@ -6,6 +6,7 @@ import io.github.kakaocup.kakao.common.actions.BaseActions
 import io.github.kakaocup.kakao.common.actions.SwipeableActions
 import io.github.kakaocup.kakao.common.assertions.BaseAssertions
 import org.wikipedia.homeworks.homework19.Steps
+import org.wikipedia.homeworks.homework24.KWebViewElement
 
 class NamedSteps(val testContext: TestContext<*>) {
     private fun execute(step: String, actions: (StepInfo) -> Unit) {
@@ -35,6 +36,15 @@ class NamedSteps(val testContext: TestContext<*>) {
             element.swipeUp()
         }
 
+    }
+
+    fun scroll(element:KWebViewElement){
+        execute("Свапаем ${element.getName()} вверх"){
+            testContext.flakySafely (15000){
+                element.executeAction { scroll() }
+            }
+
+        }
     }
 
     fun isDisplayed(element: BaseAssertions,) {
