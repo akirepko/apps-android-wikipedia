@@ -34,7 +34,7 @@ class NewWebTest:TestCase(Kaspresso.Builder.withForcedAllureSupport ()) {
                     click() }
                 WebViewDSLObject.webView
                 WebViewDSLObject.refernces{
-                    click()
+
                 }
             }
 
